@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-namespace Sonar
+namespace Quizma
 {
 	SplashState::SplashState(GameDataRef data) : _data(data)
 	{
@@ -45,7 +45,7 @@ namespace Sonar
 
 	void SplashState::Draw(float dt)
 	{
-		this->_data->window.clear(sf::Color::Red);
+		this->_data->window.clear(sf::Color::Black);
 
 		this->_data->window.draw(this->_background);
 

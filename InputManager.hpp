@@ -2,7 +2,7 @@
 
 #include "SFML\Graphics.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	class InputManager
 	{

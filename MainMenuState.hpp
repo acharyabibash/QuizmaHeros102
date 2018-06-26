@@ -5,7 +5,7 @@
 #include "State.hpp"
 #include "Games.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	class MainMenuState : public State
 	{
@@ -17,6 +17,7 @@ namespace Sonar
 		void HandleInput();
 		void Update(float dt);
 		void Draw(float dt);
+		
 
 
 	private:
@@ -25,6 +26,7 @@ namespace Sonar
 		sf::Sprite _background;
 		sf::Sprite _title;
 		sf::Sprite _playButton;
-		//sf::Music music;
+		sf::Sprite _exitButton;		
+		sf::Sprite _optionsButton;
 	};
 }

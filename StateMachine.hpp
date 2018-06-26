@@ -5,7 +5,7 @@
 
 #include "State.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	typedef std::unique_ptr<State> StateRef;
 
@@ -17,6 +17,7 @@ namespace Sonar
 
 		void AddState(StateRef newState, bool isReplacing = true);
 		void RemoveState();
+
 		// Run at start of each loop in Game.cpp
 		void ProcessStateChanges();
 

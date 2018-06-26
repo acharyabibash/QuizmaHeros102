@@ -6,10 +6,10 @@
 
 namespace Quizma
 {
-	class SplashState : public State
+	class Options : public State
 	{
 	public:
-		SplashState(GameDataRef data);
+		Options(GameDataRef data);
 
 		void Init();
 
@@ -17,11 +17,13 @@ namespace Quizma
 		void Update(float dt);
 		void Draw(float dt);
 
+
 	private:
 		GameDataRef _data;
 
-		sf::Clock _clock;
-
 		sf::Sprite _background;
+		sf::Sprite _option_1;
+		sf::Sprite _option_2;
+		sf::Sprite _option_back;
 	};
 }

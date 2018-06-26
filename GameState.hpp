@@ -4,7 +4,7 @@
 #include "State.hpp"
 #include "Games.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	class GameState : public State
 	{
@@ -17,9 +17,11 @@ namespace Sonar
 		void Update(float dt);
 		void Draw(float dt);
 
+
 	private:
 		GameDataRef _data;
 
 		sf::Sprite _background;
+		sf::Sprite _nextPage;
 	};
 }

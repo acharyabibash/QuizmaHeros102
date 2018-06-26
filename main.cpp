@@ -3,8 +3,14 @@
 
 int main()
 {
-	Sonar::Games(SCREEN_WIDTH, SCREEN_HEIGHT, "Flappy Bird");
+	Quizma::Games(SCREEN_WIDTH, SCREEN_HEIGHT, "QUIZMA HEROES");
 
 	return EXIT_SUCCESS;
 }
+
+
+
+
+
+
 

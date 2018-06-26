@@ -3,11 +3,12 @@
 #include <memory>
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "StateMachine.hpp"
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	struct GameData
 	{
@@ -15,6 +16,9 @@ namespace Sonar
 		sf::RenderWindow window;
 		AssetManager assets;
 		InputManager input;
+		sf::Music music;
+		sf::SoundBuffer buffer;
+		sf::Sound sound;
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;

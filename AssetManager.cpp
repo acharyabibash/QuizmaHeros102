@@ -2,7 +2,7 @@
 #include <SFML/Audio.hpp>
 #include "AssetManager.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	void AssetManager::LoadTexture(std::string name, std::string fileName)
 	{
@@ -19,20 +19,6 @@ namespace Sonar
 		return this->_textures.at(name);
 	}
 
-	/*void AssetManager::LoadMusic(std::string name, std::string fileName)
-	{
-		sf::Music music;
-
-		if (music.openFromFile(fileName))
-		{
-			this->_musics[name] = music;
-		}
-	}
-
-	sf::Music &AssetManager::GetMusic(std::string name)
-	{
-		return this->_musics.at(name);
-	}*/
 
 	void AssetManager::LoadFont(std::string name, std::string fileName)
 	{
@@ -48,4 +34,5 @@ namespace Sonar
 	{
 		return this->_fonts.at(name);
 	}
+
 }

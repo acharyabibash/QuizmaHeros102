@@ -1,10 +1,11 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Games.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	class GameOverState : public State
 	{
@@ -20,6 +21,8 @@ namespace Sonar
 	private:
 		GameDataRef _data;
 
+		sf::Clock _clock;
 		sf::Sprite _background;
+		sf::Sprite _gameOver;
 	};
 }

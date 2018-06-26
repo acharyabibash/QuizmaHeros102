@@ -2,7 +2,7 @@
 
 #include "InputManager.hpp"
 
-namespace Sonar
+namespace Quizma
 {
 	bool InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window)
 	{
