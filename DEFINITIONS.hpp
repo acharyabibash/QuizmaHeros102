@@ -3,27 +3,43 @@
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 
-#define SPLASH_STATE_SHOW_TIME 2
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "x.png"
+#define SPLASH_STATE_SHOW_TIME 1.5
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "FIRE.jpg"
 
-#define MAIN_MENU_BACKGROUND_FILEPATH "4.jpg"
+#define MAIN_MENU_BACKGROUND_FILEPATH "7.jpg"
 
-#define GAME_TITLE_FILEPATH "Quizma.png"
-#define GAME_SCREEN_1_FILEPATH "fun.png"
-#define GAME_SCREEN_2_FILEPATH "funn.png"
+#define CURSOR_FILEPATH "Cursor3.png"
 
-#define PLAY_BUTTON_FILEPATH "New.png"
-#define EXIT_BUTTON_FILEPATH "Exit.png"
 
-#define NEXT_PAGE_FILEPATH "Next.png"
-#define QUIT_FILEPATH "Quit.png"
+#define PLAY_BUTTON_FILEPATH "NEW GAME.png"
+#define OPTIONS_BUTTON_FILEPATH "NEW OPTIONS.png"
+#define SOUND_BUTTON_FILEPATH "MUSIC.png"
+#define NEXT_MUSIC_BUTTON_FILEPATH "MUSIC 1.png"
+#define NEXT_MUSIC_1_BUTTON_FILEPATH "MUSIC 2.png"
+#define PLAY_AGAIN_BUTTON_FILEPATH "PLAY AGAIN.png"
+#define EXIT_BUTTON_FILEPATH "NEW EXIT.png"
+#define QUESTION_BOX "questionBox.png"
+#define OPTION_BOX "optionBox.png"
 
-#define GAME_OVER_BACKGROUND_FILEPATH "GO.png"
-#define GAME_OVER_IMAGE "GameOver.png"
+#define GAME_TITLE_FILEPATH "QUIZMA HEROES.png"
 
-#define OPTIONS_BUTTON_FILEPATH "Options.png"
-#define OPTONS_SCREEN_FILEPATH "optionsBackground.png"
-#define OPTIONS_ON "ON.png"
-#define OPTIONS_OFF "OFF.png"
-#define OPTIONS_BACK "Backoff.png"
+#define GAME_SCREEN_1_FILEPATH "Bg.png"
+#define GAME_SCREEN_2_FILEPATH "Question.png"
+#define GAME_SCREEN_3_FILEPATH "funn.png"
+
+#define NEXT_PAGE_FILEPATH "NEXT.png"
+#define QUIT_FILEPATH "QUIT.png"
+
+#define GAME_OVER_BACKGROUND_FILEPATH "8.jpg"
+#define GAME_OVER_IMAGE "GAME OVER.png"
+
+
+#define OPTONS_SCREEN_FILEPATH "FIRE.jpg"
+#define MUSIC_ON "ON.png"
+#define MUSIC_OFF "OFF.png"
+#define OPTIONS_BACK "BACK.png"
+
+
+#define QUESTION_FILEPATH "question.txt"
+#define ANSWERS_FILEPATH "answers.txt"
 
