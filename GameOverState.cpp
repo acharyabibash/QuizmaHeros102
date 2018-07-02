@@ -44,7 +44,7 @@ namespace Quizma
 	{
 		if (this->_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME)
 		{
-			// Close the damned project!
+			// Close the application
 			this->_data->window.close();
 		}
 	}

@@ -16,18 +16,27 @@ namespace Quizma
 	void Options::Init()
 	{
 		this->_data->assets.LoadTexture("Game Background", OPTONS_SCREEN_FILEPATH);
-		this->_data->assets.LoadTexture("Option 1 Image", OPTIONS_ON);
-		this->_data->assets.LoadTexture("Option 2 Image", OPTIONS_OFF);
+		this->_data->assets.LoadTexture("Sound", SOUND_BUTTON_FILEPATH);
+		this->_data->assets.LoadTexture("Song 1", NEXT_MUSIC_BUTTON_FILEPATH);
+		this->_data->assets.LoadTexture("Song 2", NEXT_MUSIC_1_BUTTON_FILEPATH);
+		this->_data->assets.LoadTexture("Option 1 Image", MUSIC_ON);
+		this->_data->assets.LoadTexture("Option 2 Image", MUSIC_OFF);
 		this->_data->assets.LoadTexture("Option Back", OPTIONS_BACK);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
+		_sound.setTexture(this->_data->assets.GetTexture("Sound"));
+		_music1.setTexture(this->_data->assets.GetTexture("Song 1"));
+		_music2.setTexture(this->_data->assets.GetTexture("Song 2"));
 		_option_1.setTexture(this->_data->assets.GetTexture("Option 1 Image"));
 		_option_2.setTexture(this->_data->assets.GetTexture("Option 2 Image"));
 		_option_back.setTexture(this->_data->assets.GetTexture("Option Back"));
 
-		_option_1.setPosition((SCREEN_WIDTH / 2) - (_option_1.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_option_1.getGlobalBounds().height / 2));
-		_option_2.setPosition((SCREEN_WIDTH / 2) - (_option_2.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 1.5) - (_option_2.getGlobalBounds().height / 2));
-		_option_back.setPosition(1500, 900);
+		_sound.setPosition(100, 150);
+		_music1.setPosition(100, 400);
+		_music2.setPosition(100,650);
+		_option_1.setPosition(500,150);
+		_option_2.setPosition(700,150);
+		_option_back.setPosition(1700, 950);
 	}
 
 	void Options::HandleInput()
@@ -43,18 +52,52 @@ namespace Quizma
 
 			if (this->_data->input.IsSpriteClicked(this->_option_1, sf::Mouse::Left, this->_data->window))
 			{
-				//Music Plays!!
+				//First Music Plays!!
+				this->_data->music.stop();
+				this->_data->music1.play();
+				this->_data->music2.stop();
+				this->_data->music3.stop();
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
-				this->_data->music.play();
+				
 			}
+
+			//for music 2
+			if (this->_data->input.IsSpriteClicked(this->_music1, sf::Mouse::Left, this->_data->window))
+			{
+				this->_data->sound.setBuffer(this->_data->buffer);
+				this->_data->sound.play();
+				this->_data->music.stop();
+				this->_data->music1.stop();
+				this->_data->music3.stop();
+				this->_data->music2.play();
+			}			
+
+			//for music 3
+			if (this->_data->input.IsSpriteClicked(this->_music2, sf::Mouse::Left, this->_data->window))
+			{
+				this->_data->sound.setBuffer(this->_data->buffer);
+				this->_data->sound.play();
+				this->_data->music.stop();
+				this->_data->music1.stop();
+				this->_data->music2.stop();
+				this->_data->music3.play();
+
+			}
+
+			
 
 			else if (this->_data->input.IsSpriteClicked(this->_option_2, sf::Mouse::Left, this->_data->window))
 			{
-				//Music Dies!!
+				//Music Stops!!
+			
+				this->_data->music.stop();
+				this->_data->music1.stop();
+				this->_data->music2.stop();
+
+				this->_data->music3.stop();
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
-				this->_data->music.pause();
 			}
 
 			else if (this->_data->input.IsSpriteClicked(this->_option_back, sf::Mouse::Left, this->_data->window))
@@ -77,8 +120,11 @@ namespace Quizma
 		this->_data->window.clear(sf::Color::Black);
 
 		this->_data->window.draw(this->_background);
+		this->_data->window.draw(this->_sound);
+		this->_data->window.draw(this->_music1);
 		this->_data->window.draw(this->_option_1);
 		this->_data->window.draw(this->_option_2);
+		this->_data->window.draw(this->_music2);
 		this->_data->window.draw(this->_option_back);
 
 		this->_data->window.display();

@@ -24,6 +24,7 @@
     <ClCompile Include="Games.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GameState2.cpp" />
+    <ClCompile Include="HighScore.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
@@ -38,12 +39,32 @@
     <ClInclude Include="Games.hpp" />
     <ClInclude Include="GameState.hpp" />
     <ClInclude Include="GameState2.hpp" />
+    <ClInclude Include="HighScore.hpp" />
     <ClInclude Include="InputManager.hpp" />
     <ClInclude Include="MainMenuState.hpp" />
     <ClInclude Include="Options.hpp" />
     <ClInclude Include="SplashState.hpp" />
     <ClInclude Include="State.hpp" />
     <ClInclude Include="StateMachine.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="5.png" />
+    <Image Include="6.jpg" />
+    <Image Include="7.jpg" />
+    <Image Include="8.jpg" />
+    <Image Include="BACK.png" />
+    <Image Include="FIRE.jpg" />
+    <Image Include="GAME OVER.png" />
+    <Image Include="NEW EXIT.png" />
+    <Image Include="NEW GAME.png" />
+    <Image Include="NEW OPTIONS.png" />
+    <Image Include="NEXT.png" />
+    <Image Include="OFF.png" />
+    <Image Include="ON.png" />
+    <Image Include="PLAY AGAIN.png" />
+    <Image Include="QUIT.png" />
+    <Image Include="QUIZMA HEROES.png" />
+    <Image Include="real_cursor.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
