@@ -1,8 +1,9 @@
 #include "Question_utils.h"
+#include "DEFINITIONS.hpp"
 
 std::vector<Question> Question_utils::loadQuestion() 
 {
-	question_file.open("Questions.txt", std::ios::in);
+	question_file.open(QUESTION_FILEPATH, std::ios::in);
 
 	if (question_file.is_open()) {
 		while (getline(question_file, line)) {
