@@ -9,6 +9,7 @@
 #include "StateMachine.hpp"
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
+#include "Question_vector.h"
 
 namespace Quizma
 {
@@ -29,8 +30,8 @@ namespace Quizma
 		sf::Text text;
 		sf::Text texts;
 
-		std::ifstream questionFile;
-		std::vector<std::string> question;
+		//std::ifstream questionFile;
+		std::vector<Question> question_vector;
 
 		std::ifstream answerFile;
 		std::vector<std::string> answers;

@@ -1,7 +1,7 @@
 #pragma once
 
-#define SCREEN_WIDTH 1920
-#define SCREEN_HEIGHT 1080
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
 
 #define SPLASH_STATE_SHOW_TIME 1.5
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "FIRE.jpg"
@@ -40,6 +40,6 @@
 #define OPTIONS_BACK "BACK.png"
 
 
-#define QUESTION_FILEPATH "question.txt"
-#define ANSWERS_FILEPATH "answers.txt"
+#define QUESTION_FILEPATH "Questions.txt"
+#define ANSWERS_FILEPATH "Answers.txt"
 
