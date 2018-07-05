@@ -5,6 +5,7 @@
 #include "DEFINITIONS.hpp"
 #include "GameState.hpp"
 #include "GameState2.hpp"
+#include "GameOverState.hpp"
 #include <iostream>
 
 namespace Quizma
@@ -16,8 +17,8 @@ namespace Quizma
 
 		void GameState::Init()
 		{
-			// FOR QUESTIONS
-			this->_data->text.setString(this->_data->question[0]);
+			/*// FOR QUESTIONS
+			this->_data->text.setString(this->_data->question[rand() % 8]);
 
 			// set the character size
 			this->_data->text.setCharacterSize(50);
@@ -27,7 +28,7 @@ namespace Quizma
 
 			// FOR ANSWERS
 			this->_data->texts.setString(this->_data->answers[0]);
-			this->_data->texts.setString(this->_data->answers[1]);
+			this->_data->texts.setString(this->_data->answers[1]);*/
 
 			// set the character size
 			this->_data->texts.setCharacterSize(50);
@@ -41,6 +42,7 @@ namespace Quizma
 			this->_data->assets.LoadTexture("Option Box 2 Image", OPTION_BOX);
 			this->_data->assets.LoadTexture("Option Box 3 Image", OPTION_BOX);
 			this->_data->assets.LoadTexture("Option Box 4 Image", OPTION_BOX);
+			this->_data->assets.LoadTexture("Quit Image", QUIT_FILEPATH);
 
 			_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 			_nextPage.setTexture(this->_data->assets.GetTexture("Next Page Image"));
@@ -50,6 +52,7 @@ namespace Quizma
 			_optionsBox3.setTexture(this->_data->assets.GetTexture("Option Box 3 Image"));
 			_optionsBox4.setTexture(this->_data->assets.GetTexture("Option Box 4 Image"));
 			_questionBox.setTexture(this->_data->assets.GetTexture("Question Box Image"));
+			_Quit.setTexture(this->_data->assets.GetTexture("Quit Image"));
 
 			_questionBox.setScale(sf::Vector2f(0.20f, 0.15f));
 			_optionsBox1.setScale(0.75, 0.75);
@@ -69,7 +72,8 @@ namespace Quizma
 			_optionsBox3.setColor(sf::Color::Black);
 			_optionsBox4.setColor(sf::Color::Black);
 
-			_nextPage.setPosition(1700, 950);
+			_nextPage.setPosition(1500, 950);
+			_Quit.setPosition(1700, 950);
 
 		}
 
@@ -89,7 +93,8 @@ namespace Quizma
 					// Go to the next page
 					this->_data->sound.setBuffer(this->_data->buffer);
 					this->_data->sound.play();
-					this->_data->machine.AddState(StateRef(new GameState2(_data)), true);
+
+					//this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 				}
 
 				//for option 1 is clicked
@@ -98,8 +103,9 @@ namespace Quizma
 					this->_data->sound.setBuffer(this->_data->buffer);
 					this->_data->sound.play();
 					_optionsBox1.setColor(sf::Color::Yellow);
+
 					//go to next question
-					this->_data->machine.AddState(StateRef(new GameState2(_data)), true);
+					//this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 				}
 
 				//for option 2 is clicked
@@ -109,7 +115,7 @@ namespace Quizma
 					this->_data->sound.play();
 					_optionsBox2.setColor(sf::Color::Yellow);
 					//go to next question
-					this->_data->machine.AddState(StateRef(new GameState2(_data)), true);
+					//this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 				}
 
 				//for option 3 is clicked
@@ -119,7 +125,7 @@ namespace Quizma
 					this->_data->sound.play();
 					_optionsBox3.setColor(sf::Color::Yellow);
 					//go to next question
-					this->_data->machine.AddState(StateRef(new GameState2(_data)), true);
+					//this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 
 				}
 
@@ -130,8 +136,16 @@ namespace Quizma
 					this->_data->sound.play();
 					_optionsBox4.setColor(sf::Color::Yellow);
 					//go to next question
-					this->_data->machine.AddState(StateRef(new GameState2(_data)), true);
+					//this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 
+				}
+
+				//for exiting 
+				if (this->_data->input.IsSpriteClicked(this->_Quit, sf::Mouse::Left, this->_data->window))
+				{
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
 				}
 
 			}
@@ -153,8 +167,10 @@ namespace Quizma
 			this->_data->window.draw(this->_optionsBox2);
 			this->_data->window.draw(this->_optionsBox3);
 			this->_data->window.draw(this->_optionsBox4);
-			this->_data->window.draw(this->_data->text);
-			this->_data->window.draw(this->_data->texts);
+			/*this->_data->window.draw(this->_data->text);
+			this->_data->window.draw(this->_data->texts);*/
+			this->_data->window.draw(this->_Quit);
+
 			this->_data->window.display();
 		}
 }

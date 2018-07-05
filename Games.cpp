@@ -2,6 +2,7 @@
 #include "SplashState.hpp"
 #include <fstream>
 #include "DEFINITIONS.hpp"
+
 namespace Quizma
 {
 	Games::Games(int width, int height, std::string title)
@@ -40,6 +41,7 @@ namespace Quizma
 			}
 		}
 
+		
 
 		this->Run();
 	}

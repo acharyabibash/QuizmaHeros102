@@ -13,7 +13,6 @@ namespace Quizma
 		GameState(GameDataRef data);
 
 		void Init();
-
 		void HandleInput();
 		void Update(float dt);
 		void Draw(float dt);
@@ -29,6 +28,7 @@ namespace Quizma
 		sf::Sprite _optionsBox3;
 		sf::Sprite _optionsBox4;
 		sf::Sprite _nextPage;
+		sf::Sprite _Quit;
 		
 	};
 }

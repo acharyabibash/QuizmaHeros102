@@ -9,7 +9,7 @@
 #include "StateMachine.hpp"
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
-#include "Question_vector.h"
+#include "QuestionManager.hpp"
 
 namespace Quizma
 {
@@ -19,6 +19,8 @@ namespace Quizma
 		sf::RenderWindow window;
 		AssetManager assets;
 		InputManager input;
+		QuestionManager questions;
+		
 
 		sf::Music music;
 		sf::Music music1;
@@ -30,12 +32,12 @@ namespace Quizma
 		sf::Text text;
 		sf::Text texts;
 
-		//std::ifstream questionFile;
-		std::vector<Question> question_vector;
+		std::ifstream questionFile;
+		std::vector<std::string> question;
 
 		std::ifstream answerFile;
 		std::vector<std::string> answers;
-
+	
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;

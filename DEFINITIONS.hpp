@@ -1,7 +1,7 @@
 #pragma once
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 720
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1080
 
 #define SPLASH_STATE_SHOW_TIME 1.5
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "FIRE.jpg"
@@ -23,7 +23,7 @@
 
 #define GAME_TITLE_FILEPATH "QUIZMA HEROES.png"
 
-#define GAME_SCREEN_1_FILEPATH "Bg.png"
+#define GAME_SCREEN_1_FILEPATH "7.jpg"
 #define GAME_SCREEN_2_FILEPATH "Question.png"
 #define GAME_SCREEN_3_FILEPATH "funn.png"
 
@@ -40,6 +40,6 @@
 #define OPTIONS_BACK "BACK.png"
 
 
-#define QUESTION_FILEPATH "Questions.txt"
-#define ANSWERS_FILEPATH "Answers.txt"
+#define QUESTION_FILEPATH "question.txt"
+#define ANSWERS_FILEPATH "answers.txt"
 

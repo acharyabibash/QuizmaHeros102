@@ -1,12 +1,11 @@
 #include "Question_utils.h"
-#include "DEFINITIONS.hpp"
 
 std::vector<Question> Question_utils::loadQuestion() 
 {
-	question_file.open(QUESTION_FILEPATH, std::ios::in);
+	question_file.open("Questions.txt", std::ios::in);
 
 	if (question_file.is_open()) {
-		while (getline(question_file, line)) {
+		while (std::getline(question_file, line)) {
 			decltype(line.size()) pos, i = 0;
 
 			while ((pos = line.find(delimiter)) != std::string::npos) {
@@ -20,8 +19,9 @@ std::vector<Question> Question_utils::loadQuestion()
 
 			qa_vector.push_back(question_set);
 		}
+		question_file.close();
 	}
-	question_file.close();
+	
 
 	return qa_vector;
 }
