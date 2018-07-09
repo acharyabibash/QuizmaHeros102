@@ -9,13 +9,13 @@ namespace Quizma
 	{
 		_data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar | sf::Style::Fullscreen);
 		_data->machine.AddState(StateRef(new SplashState(this->_data)));
-		_data->music.openFromFile("glasgowkiss.wav");
-		_data->music1.openFromFile("buu.wav");
-		_data->music2.openFromFile("L Theme.wav");
-		_data->music3.openFromFile("vegeta.wav");
-		_data->buffer.loadFromFile("Choose.wav");
+		_data->music.openFromFile("Resources/glasgowkiss.wav");
+		_data->music1.openFromFile("Resources/buu.wav");
+		_data->music2.openFromFile("Resources/L Theme.wav");
+		_data->music3.openFromFile("Resources/vegeta.wav");
+		_data->buffer.loadFromFile("Resources/Choose.wav");
 
-		_data->font.loadFromFile("CENTAUR.ttf");
+		_data->font.loadFromFile("Resources/CENTAUR.ttf");
 		_data->text.setFont(this->_data->font);
 		for (int i = 0; i < 4; i++) {
 			_data->texts[i].setFont(this->_data->font);

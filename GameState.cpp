@@ -76,8 +76,7 @@ namespace Quizma
 		_optionsBox3.setColor(sf::Color::White);
 		_optionsBox4.setColor(sf::Color::White);	
 
-		static decltype(this->_data->question_vector.size())
-			count = 0;
+		static decltype(this->_data->question_vector.size()) count = 0;
 
 		for (decltype(this->_data->question_vector.size()) i = 0; i < this->_data->question_vector.size(); i++) 
 		{
