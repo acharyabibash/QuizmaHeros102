@@ -12,7 +12,7 @@ namespace Quizma
 		std::ifstream question_file;
 		std::string line;
 		char delimiter = ':';
-		std::string qa_array[5];
+		std::string qa_array[6];
 		std::string *qa_pointer = qa_array;
 		std::vector<QuestionManager> qa_vector;
 

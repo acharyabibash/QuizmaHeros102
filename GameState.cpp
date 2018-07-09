@@ -76,20 +76,21 @@ namespace Quizma
 		_optionsBox3.setColor(sf::Color::White);
 		_optionsBox4.setColor(sf::Color::White);	
 
-		static decltype(this->_data->question_vector.size()) count = 0;
-
-		for (decltype(this->_data->question_vector.size()) i = 0; i < this->_data->question_vector.size(); i++) 
+		static decltype(this->_data->question_vector.size()) i = 0;
+		for (; i < this->_data->question_vector.size(); ) 
 		{
-			if (i + count < this->_data->question_vector.size())
+			if (i < this->_data->question_vector.size())
 			{
-				this->_data->text.setString(this->_data->question_vector.at(i + count).quest);
+				this->_data->text.setString(this->_data->question_vector.at(i).quest);
 
-				this->_data->texts[0].setString(this->_data->question_vector.at(i + count).ans[0]);
-				this->_data->texts[1].setString(this->_data->question_vector.at(i + count).ans[1]);
-				this->_data->texts[2].setString(this->_data->question_vector.at(i + count).ans[2]);
-				this->_data->texts[3].setString(this->_data->question_vector.at(i + count).ans[3]);
+				this->_data->texts[0].setString(this->_data->question_vector.at(i).ans[0]);
+				this->_data->texts[1].setString(this->_data->question_vector.at(i).ans[1]);
+				this->_data->texts[2].setString(this->_data->question_vector.at(i).ans[2]);
+				this->_data->texts[3].setString(this->_data->question_vector.at(i).ans[3]);
 
-				count++;
+				std::cout << this->_data->question_vector.at(i).ans[4] << std::endl;
+
+				i++;
 
 				break;
 			}
@@ -100,6 +101,7 @@ namespace Quizma
 	void GameState::HandleInput()
 	{
 		sf::Event event;
+		static decltype(this->_data->question_vector.at(0).ans->size()) q_no = 0;
 
 		while (this->_data->window.pollEvent(event))
 		{
@@ -121,47 +123,65 @@ namespace Quizma
 			//for option 1 is clicked
 			if (this->_data->input.IsSpriteClicked(this->_optionsBox1, sf::Mouse::Left, this->_data->window))
 			{
-				this->_data->sound.setBuffer(this->_data->buffer);
-				this->_data->sound.play();
-				_optionsBox1.setColor(sf::Color::Cyan);
+				if (this->_data->question_vector.at(q_no).ans[0] == this->_data->question_vector.at(q_no).correct_ans) {
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					_optionsBox1.setColor(sf::Color::Cyan);
 
-				//go to next question
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+					q_no++;
+					//go to next question
+					this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				} else {
+					this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				}
 			}
 
 			//for option 2 is clicked
 			if (this->_data->input.IsSpriteClicked(this->_optionsBox2, sf::Mouse::Left, this->_data->window))
 			{
-				this->_data->sound.setBuffer(this->_data->buffer);
-				this->_data->sound.play();
-				_optionsBox2.setColor(sf::Color::Cyan);
+				if (this->_data->question_vector.at(q_no).ans[1] == this->_data->question_vector.at(q_no).correct_ans) {
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					_optionsBox2.setColor(sf::Color::Cyan);
 
-				//go to next question
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+					q_no++;
+					//go to next question
+					this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				} else {
+					this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				}
 			}
 
 			//for option 3 is clicked
 			if (this->_data->input.IsSpriteClicked(this->_optionsBox3, sf::Mouse::Left, this->_data->window))
 			{
-				this->_data->sound.setBuffer(this->_data->buffer);
-				this->_data->sound.play();
-				_optionsBox3.setColor(sf::Color::Cyan);
+				if (this->_data->question_vector.at(q_no).ans[2] == this->_data->question_vector.at(q_no).correct_ans) {
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					_optionsBox3.setColor(sf::Color::Cyan);
 
-				//go to next question
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
-
+					q_no++;
+					//go to next question
+					this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				} else {
+					this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				}
 			}
 
 			//for option 4 is clicked
 			if (this->_data->input.IsSpriteClicked(this->_optionsBox4, sf::Mouse::Left, this->_data->window))
 			{
-				this->_data->sound.setBuffer(this->_data->buffer);
-				this->_data->sound.play();
-				_optionsBox4.setColor(sf::Color::Cyan);
+				if (this->_data->question_vector.at(q_no).ans[3] == this->_data->question_vector.at(q_no).correct_ans) {
+					this->_data->sound.setBuffer(this->_data->buffer);
+					this->_data->sound.play();
+					_optionsBox4.setColor(sf::Color::Cyan);
 
-				//go to next question
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
-
+					q_no++;
+					//go to next question
+					this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				} else {
+					this->_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				}
 			}
 
 			//for exiting 

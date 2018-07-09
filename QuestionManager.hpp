@@ -16,13 +16,14 @@ namespace Quizma {
 
 		std::string quest;
 		std::string ans[SIZE_OF_ANS];
+		std::string correct_ans;
 
 	public:
 		QuestionManager() {}
 		~QuestionManager() { }
 
-		QuestionManager(std::string, std::string answer[SIZE_OF_ANS]);
-		void setValue(std::string, std::string answer[SIZE_OF_ANS]);
+		QuestionManager(std::string, std::string answer[]);
+		void setValue(std::string, std::string answer[]);
 		friend std::ostream &operator<<(std::ostream &, const QuestionManager &);
 	};
 

@@ -30,6 +30,5 @@ namespace Quizma
 		sf::Sprite _nextPage;
 		sf::Sprite _Quit;
 		sf::Sprite _cursor;
-
 	};
 }
