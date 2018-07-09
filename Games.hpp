@@ -10,6 +10,9 @@
 #include "AssetManager.hpp"
 #include "InputManager.hpp"
 #include "QuestionManager.hpp"
+#include "QuestionVector.hpp"
+
+#define SIZE_OF_TEXTS 4
 
 namespace Quizma
 {
@@ -20,7 +23,7 @@ namespace Quizma
 		AssetManager assets;
 		InputManager input;
 		QuestionManager questions;
-		
+
 
 		sf::Music music;
 		sf::Music music1;
@@ -30,14 +33,16 @@ namespace Quizma
 		sf::Sound sound;
 		sf::Font font;
 		sf::Text text;
-		sf::Text texts;
+		sf::Text texts[SIZE_OF_TEXTS];
 
-		std::ifstream questionFile;
+		std::vector<QuestionManager> question_vector;
+		QuestionVector qa_vector;
+
+		/*std::ifstream questionFile;
 		std::vector<std::string> question;
-
 		std::ifstream answerFile;
-		std::vector<std::string> answers;
-	
+		std::vector<std::string> answers;*/
+
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;

@@ -17,28 +17,35 @@ namespace Quizma
 	
 	void MainMenuState::Init()
 	{
-		this->_data->window.setMouseCursorVisible(true);
-		
-		
+
+		this->_data->window.setMouseCursorVisible(false);
+
 		this->_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
 		this->_data->assets.LoadTexture("Game Title", GAME_TITLE_FILEPATH);
 		this->_data->assets.LoadTexture("Play Button", PLAY_BUTTON_FILEPATH);
 		this->_data->assets.LoadTexture("Options Button", OPTIONS_BUTTON_FILEPATH);
 		this->_data->assets.LoadTexture("Exit Button", EXIT_BUTTON_FILEPATH);
-
+		this->_data->assets.LoadTexture("Cursor", CURSOR_FILEPATH);
+		this->_data->assets.LoadTexture("Bulb", BULB_FILEPATH);
 		
 		_background.setTexture(this->_data->assets.GetTexture("Main Menu Background"));
 		_title.setTexture(this->_data->assets.GetTexture("Game Title"));
 		_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
 		_optionsButton.setTexture(this->_data->assets.GetTexture("Options Button"));
 		_exitButton.setTexture(this->_data->assets.GetTexture("Exit Button"));
+		_cursor.setTexture(this->_data->assets.GetTexture("Cursor"));
+		_bulb.setTexture(this->_data->assets.GetTexture("Bulb"));
 
-		
+				
 
 		_title.setPosition((SCREEN_WIDTH / 2) - (_title.getGlobalBounds().width / 2), _title.getGlobalBounds().height / 2);
 		_playButton.setPosition((SCREEN_WIDTH / 2) - (_playButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2.5) - (_playButton.getGlobalBounds().height / 2));
 		_optionsButton.setPosition((SCREEN_WIDTH / 2) - (_optionsButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 1.75) - (_optionsButton.getGlobalBounds().height / 2));
 		_exitButton.setPosition((SCREEN_WIDTH / 2) - (_exitButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT/1.35) - (_exitButton.getGlobalBounds().height / 2));
+		_bulb.setPosition(375, 75);
+
+		_cursor.setScale(0.35, 0.35);
+		_bulb.setScale(0.5, 0.5);
 	}
 
 	void MainMenuState::HandleInput()
@@ -46,9 +53,7 @@ namespace Quizma
 		sf::Event event;
 
 		while (this->_data->window.pollEvent(event))
-		{
-			
-			
+		{			
 			if (sf::Event::Closed == event.type)
 			{
 				this->_data->window.close();
@@ -87,13 +92,14 @@ namespace Quizma
 				this->_data->window.close();
 			}
 
+			_cursor.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(this->_data->window)));
 		}
 	}
-
+	
 	void MainMenuState::Update(float dt)
 	{
 
-	}
+	}	
 
 	void MainMenuState::Draw(float dt)
 	{
@@ -105,8 +111,11 @@ namespace Quizma
 		this->_data->window.draw(this->_playButton);
 		this->_data->window.draw(this->_optionsButton);
 		this->_data->window.draw(this->_exitButton);
+		this->_data->window.draw(this->_bulb);
 
-		
+	
+
+		this->_data->window.draw(this->_cursor);
 		
 		this->_data->window.display();
 	}

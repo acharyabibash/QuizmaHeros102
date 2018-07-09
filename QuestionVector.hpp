@@ -1,4 +1,5 @@
 #pragma once
+
 #include "QuestionManager.hpp"
 #include "QuestionUtils.hpp"
 #include <algorithm>
@@ -8,7 +9,6 @@
 namespace Quizma
 {
 	class QuestionVector {
-
 	private:
 		QuestionUtils q1;
 		std::vector<QuestionManager> question_answer_vector;
@@ -18,5 +18,6 @@ namespace Quizma
 	public:
 		QuestionVector();
 		void displayQuestions();
+		std::vector<QuestionManager> passQuestion();
 	};
 }

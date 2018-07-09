@@ -1,15 +1,16 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <fstream>
 #include "State.hpp"
 #include "Games.hpp"
 
 namespace Quizma
 {
-	class Options : public State
+	class HighScore : public State
 	{
 	public:
-		Options(GameDataRef data);
+		HighScore(GameDataRef data);
 
 		void Init();
 
@@ -21,12 +22,12 @@ namespace Quizma
 		GameDataRef _data;
 
 		sf::Sprite _background;
-		sf::Sprite _sound;
-		sf::Sprite _music1;
-		sf::Sprite _music2;
-		sf::Sprite _option_1;
-		sf::Sprite _option_2;
-		sf::Sprite _option_back;
-		sf::Sprite _cursor;
+		sf::Sprite _questionBox;
+		sf::Sprite _optionsBox1;
+		sf::Sprite _optionsBox2;
+		sf::Sprite _optionsBox3;
+		sf::Sprite _optionsBox4;
+		sf::Sprite _playAgain;
+		sf::Sprite _Quit;
 	};
 }

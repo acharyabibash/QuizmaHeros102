@@ -19,7 +19,7 @@ namespace Quizma
 
 
 	private:
-		GameDataRef _data;	
+		GameDataRef _data;
 
 		sf::Sprite _background;
 		sf::Sprite _questionBox;
@@ -29,6 +29,7 @@ namespace Quizma
 		sf::Sprite _optionsBox4;
 		sf::Sprite _nextPage;
 		sf::Sprite _Quit;
-		
+		sf::Sprite _cursor;
+
 	};
 }

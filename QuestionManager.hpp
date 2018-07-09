@@ -12,7 +12,7 @@ namespace Quizma {
 	class QuestionManager
 	{
 
-	private:
+	public:
 
 		std::string quest;
 		std::string ans[SIZE_OF_ANS];

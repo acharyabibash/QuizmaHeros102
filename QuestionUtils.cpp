@@ -4,7 +4,7 @@ namespace Quizma
 {
 	std::vector<QuestionManager> QuestionUtils::loadQuestion()
 	{
-		question_file.open("Questions.txt", std::ios::in);
+		question_file.open(QUESTION_FILEPATH, std::ios::in);
 
 		if (question_file.is_open())
 		{

@@ -15,4 +15,8 @@ namespace Quizma
 			std::cout << question_answer_vector.at(i) << std::endl;
 		}
 	}
+	std::vector<QuestionManager> QuestionVector::passQuestion()
+	{
+		return question_answer_vector;
+	}
 }

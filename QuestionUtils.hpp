@@ -1,5 +1,6 @@
 #pragma once
 #include "QuestionManager.hpp"
+#include "DEFINITIONS.hpp"
 
 #define SIZE_OF_QA_ARRAY ((std::string::size_type)(sizeof(qa_array) / sizeof(qa_array[0])))
 

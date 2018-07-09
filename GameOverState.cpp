@@ -23,8 +23,6 @@ namespace Quizma
 		_gameOver.setTexture(this->_data->assets.GetTexture("Game Over"));
 
 		_gameOver.setPosition((SCREEN_WIDTH / 2) - (_gameOver.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_gameOver.getGlobalBounds().height / 2));
-
-
 	}
 
 	void GameOverState::HandleInput()

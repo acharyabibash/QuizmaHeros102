@@ -17,10 +17,16 @@ namespace Quizma
 
 		_data->font.loadFromFile("CENTAUR.ttf");
 		_data->text.setFont(this->_data->font);
-		_data->texts.setFont(this->_data->font);
+		for (int i = 0; i < 4; i++) {
+			_data->texts[i].setFont(this->_data->font);
+		}
 
-		std::ifstream questionFile(QUESTION_FILEPATH);
+		_data->question_vector = _data->qa_vector.passQuestion();
 
+		/*for (decltype(_data->question_vector.size()) i = 0; i < _data->question_vector.size(); i++) {
+			std::cout << _data->question_vector.at(i) << std::endl;
+		}*/
+		/*std::ifstream questionFile(QUESTION_FILEPATH);
 		if (questionFile.is_open()) {
 			while (!questionFile.eof())
 			{
@@ -29,9 +35,7 @@ namespace Quizma
 				this->_data->question.push_back(questionTemp);
 			}
 		}
-
 		std::ifstream answerFile(ANSWERS_FILEPATH);
-
 		if (answerFile.is_open()) {
 			while (!answerFile.eof())
 			{
@@ -40,7 +44,7 @@ namespace Quizma
 				this->_data->answers.push_back(answerTemp);
 			}
 		}
-
+*/
 		
 
 		this->Run();

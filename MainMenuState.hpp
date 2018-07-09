@@ -28,5 +28,10 @@ namespace Quizma
 		sf::Sprite _playButton;
 		sf::Sprite _exitButton;		
 		sf::Sprite _optionsButton;
+		sf::Sprite _cursor;
+		sf::Sprite _bulb;
+
+		//sf::View _fixed;
+	
 	};
 }
