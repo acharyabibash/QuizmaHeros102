@@ -24,5 +24,8 @@ namespace Quizma
 		sf::Clock _clock;
 		sf::Sprite _background;
 		sf::Sprite _gameOver;
+		sf::Sprite _cursor;
+		sf::Sprite _Quit;
+		sf::Sprite _nextPage;
 	};
 }

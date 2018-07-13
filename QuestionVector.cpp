@@ -15,6 +15,12 @@ namespace Quizma
 			std::cout << question_answer_vector.at(i) << std::endl;
 		}
 	}
+
+	void QuestionVector::shuffleQuestions()
+	{
+		std::shuffle(question_answer_vector.begin(), question_answer_vector.end(), rng);
+	}
+
 	std::vector<QuestionManager> QuestionVector::passQuestion()
 	{
 		return question_answer_vector;

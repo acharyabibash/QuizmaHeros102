@@ -6,7 +6,7 @@
 #define SPLASH_STATE_SHOW_TIME 2
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/logo.png"
 
-#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/frame3.jpg"
+#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Frame.jpg"
 
 #define CURSOR_FILEPATH "Resources/Cursor3.png"
 #define BULB_FILEPATH "Resources/bulb.png"

@@ -44,6 +44,7 @@ namespace Quizma
 		_exitButton.setPosition((SCREEN_WIDTH / 2) - (_exitButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT/1.35) - (_exitButton.getGlobalBounds().height / 2));
 		_bulb.setPosition(375, 75);
 
+		_cursor.setPosition((SCREEN_WIDTH / 2) - (_cursor.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_cursor.getGlobalBounds().height / 2));
 		_cursor.setScale(0.35, 0.35);
 		_bulb.setScale(0.5, 0.5);
 	}
@@ -73,6 +74,8 @@ namespace Quizma
 				//this->_data->music.pause();
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
+				this->_data->qa_vector.shuffleQuestions();
+				this->_data->question_vector = this->_data->qa_vector.passQuestion();
 				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
 
