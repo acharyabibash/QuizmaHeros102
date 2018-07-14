@@ -5,6 +5,7 @@
 #include "MainMenuState.hpp"
 #include "GameState.hpp"
 #include "Options.hpp"
+#include "player.hpp"
 #include <iostream>
 
 namespace Quizma
@@ -43,8 +44,8 @@ namespace Quizma
 		_optionsButton.setPosition((SCREEN_WIDTH / 2) - (_optionsButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 1.75) - (_optionsButton.getGlobalBounds().height / 2));
 		_exitButton.setPosition((SCREEN_WIDTH / 2) - (_exitButton.getGlobalBounds().width / 2), (SCREEN_HEIGHT/1.35) - (_exitButton.getGlobalBounds().height / 2));
 		_bulb.setPosition(375, 75);
-
 		_cursor.setPosition((SCREEN_WIDTH / 2) - (_cursor.getGlobalBounds().width / 2), (SCREEN_HEIGHT / 2) - (_cursor.getGlobalBounds().height / 2));
+
 		_cursor.setScale(0.35, 0.35);
 		_bulb.setScale(0.5, 0.5);
 	}
@@ -74,9 +75,7 @@ namespace Quizma
 				//this->_data->music.pause();
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
-				this->_data->qa_vector.shuffleQuestions();
-				this->_data->question_vector = this->_data->qa_vector.passQuestion();
-				this->_data->machine.AddState(StateRef(new GameState(_data)), true);
+				this->_data->machine.AddState(StateRef(new player(_data)), true);
 			}
 
 			if (this->_data->input.IsSpriteClicked(this->_optionsButton, sf::Mouse::Left, this->_data->window))
