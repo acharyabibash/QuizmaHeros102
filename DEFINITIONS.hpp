@@ -6,7 +6,7 @@
 #define SPLASH_STATE_SHOW_TIME 2
 #define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/logo.png"
 
-#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Frame.jpg"
+#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/FRAME.jpg"
 
 #define CURSOR_FILEPATH "Resources/Cursor3.png"
 #define BULB_FILEPATH "Resources/bulb.png"
@@ -31,6 +31,8 @@
 #define NEXT_PAGE_FILEPATH "Resources/NEXT.png"
 #define QUIT_FILEPATH "Resources/QUIT.png"
 
+#define PLAYER_BACKGROUND_FILEPATH "Resources/frame8.png"
+
 #define GAME_OVER_BACKGROUND_FILEPATH "Resources/frame1.jpg"
 #define GAME_OVER_IMAGE "Resources/GAME OVER.png"
 
@@ -41,3 +43,4 @@
 
 #define QUESTION_FILEPATH "questions.txt"
 #define ANSWERS_FILEPATH "answers.txt"
+#define PLAYER_RECORD_FILEPATH "player.txt"

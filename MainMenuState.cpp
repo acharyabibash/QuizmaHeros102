@@ -76,6 +76,10 @@ namespace Quizma
 				this->_data->sound.setBuffer(this->_data->buffer);
 				this->_data->sound.play();
 				this->_data->machine.AddState(StateRef(new player(_data)), true);
+
+				// For random questions per execution
+				this->_data->qa_vector.shuffleQuestions();
+				this->_data->question_vector = this->_data->qa_vector.passQuestion();
 			}
 
 			if (this->_data->input.IsSpriteClicked(this->_optionsButton, sf::Mouse::Left, this->_data->window))
